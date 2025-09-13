@@ -1,0 +1,163 @@
+# Server configuration
+a2a_server:
+  host: "127.0.0.1"
+  port: 8000
+
+# Logging configuration
+log_level: "INFO"
+log_file: "apia_system.log"
+
+# MCP server connections
+mcp_servers:
+  - name: "hyperbrowser"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@hyperbrowserai/mcp"
+      - "--config"
+      - "{\"hbApiKey\":\"095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6\"}"
+
+  - name: "puppeteer"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-puppeteer"
+
+  - name: "code-review"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@crazyrabbitLTC/mcp-code-review-server"
+      - "--config"
+      - "{}"
+
+  - name: "codex-keeper"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@aindreyway/mcp-codex-keeper"
+      - "--key"
+      - "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+
+  - name: "starwind-ui"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@Boston343/starwind-ui-mcp"
+      - "--config"
+      - "{}"
+
+  - name: "context7"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@upstash/context7-mcp"
+      - "--key"
+      - "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+
+  - name: "e2b"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "e2b"
+      - "--config"
+      - "{\"apiKey\":\"e2b_ee96bde4bf944bfab019bbbbfaaf2baa342297b0\"}"
+
+  - name: "github"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/github"
+      - "--config"
+      - "{\"githubPersonalAccessToken\":\"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\"}"
+
+  - name: "slack"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/slack"
+      - "--config"
+      - "{\"slackToken\":\"xoxb-your-slack-token\"}"
+
+  - name: "sequential-thinking"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/server-sequential-thinking"
+      - "--key"
+      - "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+
+  - name: "windows-control"
+    connection_type: "stdio"
+    command: "cmd"
+    args:
+      - "/c"
+      - "npx"
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@cheffromspace/windows-remote-control"
+
+# Agent blueprints (minimal set)
+agent_blueprints:
+  AIOpsEngine:
+    role: "AIOpsEngine"
+    class_name: "APIA_AIOpsAgent"
+    internal_skills: ["monitor_health", "restart_agent"]
+    a2a_skills:
+      - id: "monitor_health"
+        name: "System Health Monitoring"
+        description: "Monitors the health of all agents in the system"
+
+  UserGateway:
+    role: "UserGateway"
+    class_name: "APIA_UserGatewayAgent"
+    internal_skills: ["process_user_request"]
+    a2a_skills:
+      - id: "process_request"
+        name: "Process User Request"
+        description: "Processes natural language requests from users"

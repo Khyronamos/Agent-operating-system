@@ -1,0 +1,191 @@
+# Agent Blueprints Configuration
+# This file defines the blueprints for different agent types in the APIA framework
+
+# CEO Agent Blueprint
+ceo:
+  class_name: APIA_CEOAgent
+  internal_skills:
+    - strategic_planning
+    - resource_allocation
+  a2a_skills:
+    - id: business_strategy
+      name: Business Strategy
+      description: Develop and evaluate business strategies
+      tags: [strategy, business, planning]
+      examples:
+        - "Develop a go-to-market strategy for our new product"
+        - "Evaluate the competitive landscape for our industry"
+    - id: executive_decision
+      name: Executive Decision Making
+      description: Make high-level executive decisions
+      tags: [decision, executive, leadership]
+      examples:
+        - "Decide whether to pursue the new market opportunity"
+        - "Evaluate and approve the quarterly budget"
+
+# CTO Agent Blueprint
+cto:
+  class_name: APIA_CTOAgent
+  internal_skills:
+    - technical_evaluation
+    - architecture_review
+  a2a_skills:
+    - id: technology_assessment
+      name: Technology Assessment
+      description: Assess and evaluate technologies for use in projects
+      tags: [technology, assessment, evaluation]
+      examples:
+        - "Evaluate React vs Angular for our frontend"
+        - "Assess the security implications of using a new cloud provider"
+    - id: mvp_conceptualization
+      name: MVP Conceptualization
+      description: Transform business requirements into technical MVP specifications
+      tags: [mvp, planning, architecture, requirements]
+      examples:
+        - "Create an MVP specification for a customer portal"
+        - "Design a technical approach for our new mobile app"
+    - id: mvp_team_assembly
+      name: MVP Team Assembly
+      description: Assemble a team of specialized agents to build an MVP
+      tags: [mvp, team, assembly, resources]
+      examples:
+        - "Assemble a team for the e-commerce platform MVP"
+        - "Create a development team for the analytics dashboard"
+    - id: mvp_orchestration
+      name: MVP Orchestration
+      description: Orchestrate the MVP development process across a team of specialized agents
+      tags: [mvp, orchestration, development, coordination]
+      examples:
+        - "Orchestrate the development of the e-commerce platform MVP"
+        - "Coordinate the team building the analytics dashboard MVP"
+
+# Architect Agent Blueprint
+architect:
+  class_name: APIA_ArchitectAgent
+  internal_skills:
+    - system_design
+    - technical_documentation
+  a2a_skills:
+    - id: architecture_design
+      name: Architecture Design
+      description: Design system architecture for applications
+      tags: [architecture, design, system]
+      examples:
+        - "Design a microservices architecture for our platform"
+        - "Create a data flow diagram for the new system"
+    - id: technical_review
+      name: Technical Review
+      description: Review and evaluate technical designs and implementations
+      tags: [review, technical, evaluation]
+      examples:
+        - "Review the database schema for the new application"
+        - "Evaluate the API design for the payment system"
+
+# AIOps Engineer Agent Blueprint
+aiops:
+  class_name: APIA_AIOpsEngineAgent
+  internal_skills:
+    - system_monitoring
+    - incident_response
+  a2a_skills:
+    - id: system_health
+      name: System Health Monitoring
+      description: Monitor and report on system health
+      tags: [monitoring, health, system]
+      examples:
+        - "Check the health of all running agents"
+        - "Generate a system health report"
+    - id: incident_management
+      name: Incident Management
+      description: Manage and respond to system incidents
+      tags: [incident, management, response]
+      examples:
+        - "Investigate the cause of the recent system outage"
+        - "Implement recovery procedures for the failed service"
+
+# Delegation Agent Blueprint
+delegation:
+  class_name: APIA_DelegationAgent
+  internal_skills:
+    - task_analysis
+    - dependency_mapping
+  a2a_skills:
+    - id: task_decomposition
+      name: Task Decomposition
+      description: Break down complex tasks into manageable subtasks
+      tags: [task, decomposition, planning]
+      examples:
+        - "Break down the marketing campaign project into subtasks"
+        - "Decompose the product launch process into manageable steps"
+    - id: plan_execution
+      name: Plan Execution
+      description: Coordinate the execution of a task plan
+      tags: [plan, execution, coordination]
+      examples:
+        - "Execute the marketing campaign plan"
+        - "Coordinate the product launch plan execution"
+
+# Generic Worker Agent Blueprint
+generic_worker:
+  class_name: APIA_GenericWorkerAgent
+  internal_skills:
+    - task_execution
+    - data_processing
+  a2a_skills:
+    - id: general_task
+      name: General Task Execution
+      description: Execute general tasks as assigned
+      tags: [task, general, execution]
+      examples:
+        - "Process the customer data file"
+        - "Generate a report from the provided data"
+    - id: data_analysis
+      name: Data Analysis
+      description: Analyze data and generate insights
+      tags: [data, analysis, insights]
+      examples:
+        - "Analyze the sales data for trends"
+        - "Generate insights from the customer feedback"
+
+# Browser Use Agent Blueprint
+browser_use:
+  class_name: APIA_BrowserUseAgent
+  internal_skills:
+    - web_interaction
+    - content_extraction
+  a2a_skills:
+    - id: search_web
+      name: Search Web
+      description: Search the web for information
+      tags: [web, search, information]
+      examples:
+        - "Search for information about artificial intelligence"
+        - "Find the latest news about climate change"
+    - id: navigate_to_url
+      name: Navigate to URL
+      description: Navigate to a specific URL
+      tags: [web, navigation, url]
+      examples:
+        - "Navigate to https://www.example.com"
+        - "Go to the Wikipedia page for quantum computing"
+    - id: extract_content
+      name: Extract Content
+      description: Extract content from a web page
+      tags: [web, content, extraction]
+      examples:
+        - "Extract the main article text from the current page"
+        - "Get all links from the navigation menu"
+    - id: interact_with_page
+      name: Interact with Page
+      description: Interact with elements on a web page
+      tags: [web, interaction, elements]
+      examples:
+        - "Click the login button"
+        - "Fill out the contact form"
+    - id: take_screenshot
+      name: Take Screenshot
+      description: Take a screenshot of a web page
+      tags: [web, screenshot, capture]
+      examples:
+        - "Take a screenshot of the entire page"
+        - "Capture an image of the pricing table"

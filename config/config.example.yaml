@@ -1,0 +1,151 @@
+# Example configuration for APIA (safe for public repos)
+# Copy to config.yaml and replace placeholders with your real values.
+
+# Server configuration
+a2a_server:
+  host: "127.0.0.1"    # Use 0.0.0.0 for external access
+  port: 8000
+
+# Logging configuration
+log_level: "INFO"
+log_file: "apia_system.log"
+
+# MCP server connections (optional). Requires Node.js and npx for most entries below.
+# Replace placeholders like <...> with your actual keys or use environment injection in your launcher.
+mcp_servers:
+  - name: "hyperbrowser"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@hyperbrowserai/mcp"
+      - "--config"
+      - "{\"hbApiKey\":\"<HB_API_KEY>\"}"
+
+  - name: "puppeteer"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-puppeteer"
+
+  - name: "code-review"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@crazyrabbitLTC/mcp-code-review-server"
+      - "--config"
+      - "{}"
+
+  - name: "codex-keeper"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@aindreyway/mcp-codex-keeper"
+      - "--key"
+      - "<CODEX_KEEPER_KEY>"
+
+  - name: "starwind-ui"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@Boston343/starwind-ui-mcp"
+      - "--config"
+      - "{}"
+
+  - name: "context7"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@upstash/context7-mcp"
+      - "--key"
+      - "<CONTEXT7_KEY>"
+
+  - name: "e2b"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "e2b"
+      - "--config"
+      - "{\"apiKey\":\"<E2B_API_KEY>\"}"
+
+  - name: "github"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/github"
+      - "--config"
+      - "{\"githubPersonalAccessToken\":\"<GITHUB_PAT>\"}"
+
+  - name: "slack"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/slack"
+      - "--config"
+      - "{\"slackToken\":\"<SLACK_BOT_TOKEN>\"}"
+
+  - name: "sequential-thinking"
+    connection_type: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@smithery/cli@latest"
+      - "run"
+      - "@smithery-ai/server-sequential-thinking"
+      - "--key"
+      - "<SEQUENTIAL_THINKING_KEY>"
+
+# Agent blueprints (minimal set)
+agent_blueprints:
+  AIOpsEngine:
+    role: "AIOpsEngine"
+    class_name: "APIA_AIOpsAgent"
+    internal_skills: ["monitor_health", "restart_agent"]
+    a2a_skills:
+      - id: "monitor_health"
+        name: "System Health Monitoring"
+        description: "Monitors the health of all agents in the system"
+
+  UserGateway:
+    role: "UserGateway"
+    class_name: "APIA_UserGatewayAgent"
+    internal_skills: ["process_user_request"]
+    a2a_skills:
+      - id: "process_request"
+        name: "Process User Request"
+        description: "Processes natural language requests from users"
+
+# Authentication (disabled by default; enable and configure as needed)
+auth:
+  enabled: false
+  secret_key: "<JWT_SECRET>"
+  algorithm: "HS256"
+  access_token_expire_minutes: 30
+  refresh_token_expire_minutes: 1440
+  token_url: "/auth/token"
+  users: []
+  agents: []

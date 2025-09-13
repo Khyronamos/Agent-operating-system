@@ -1,0 +1,58 @@
+# Authentication configuration for APIA framework
+auth:
+  enabled: true
+  secret_key: "your-secret-key-should-be-at-least-32-characters"
+  algorithm: "HS256"
+  access_token_expire_minutes: 30
+  refresh_token_expire_minutes: 1440  # 24 hours
+  token_url: "/auth/token"
+  
+  # Initial users
+  users:
+    - username: "admin"
+      password: "admin_password"
+      roles: ["admin", "user"]
+      disabled: false
+      metadata:
+        name: "Admin User"
+        email: "admin@example.com"
+    
+    - username: "user"
+      password: "user_password"
+      roles: ["user"]
+      disabled: false
+      metadata:
+        name: "Regular User"
+        email: "user@example.com"
+  
+  # Initial agents
+  agents:
+    - agent_id: "agent1"
+      agent_type: "assistant"
+      roles: ["agent", "assistant"]
+      api_key: "agent1_api_key"
+      disabled: false
+      metadata:
+        name: "Assistant Agent"
+        description: "General purpose assistant agent"
+    
+    - agent_id: "agent2"
+      agent_type: "specialist"
+      roles: ["agent", "specialist"]
+      api_key: "agent2_api_key"
+      disabled: false
+      metadata:
+        name: "Specialist Agent"
+        description: "Specialized agent for specific tasks"
+
+# Rate limiting configuration
+rate_limiting:
+  enabled: true
+  default_rate: 10.0  # 10 requests per second
+  default_per: 1.0    # Per second
+  default_burst: 20   # Maximum burst size
+  
+  # Custom limits for specific paths
+  custom_limits:
+    "/auth/": [5.0, 60.0, 5]  # 5 requests per minute for auth endpoints
+    "/": [100.0, 60.0, 200]   # 100 requests per minute for main endpoint

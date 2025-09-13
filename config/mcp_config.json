@@ -1,0 +1,175 @@
+{
+  "mcpServers": {
+    "hyperbrowser": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@hyperbrowserai/mcp",
+        "--config",
+        "{\"hbApiKey\":\"095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6\"}"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+    "code-review": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@crazyrabbitLTC/mcp-code-review-server",
+        "--config",
+        "{}"
+      ]
+    },
+    "codex-keeper": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@aindreyway/mcp-codex-keeper",
+        "--key",
+        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+      ]
+    },
+    "starwind-ui": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@Boston343/starwind-ui-mcp",
+        "--config",
+        "{}"
+      ]
+    },
+    "context7": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@upstash/context7-mcp",
+        "--key",
+        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+      ]
+    },
+    "e2b": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "e2b",
+        "--config",
+        "{\"apiKey\":\"e2b_ee96bde4bf944bfab019bbbbfaaf2baa342297b0\"}"
+      ]
+    },
+    "mcp-taskmanager": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@kazuph/mcp-taskmanager",
+        "--config",
+        "{}"
+      ]
+    },
+    "Office-PowerPoint-MCP-Server": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@GongRzhe/Office-PowerPoint-MCP-Server",
+        "--config",
+        "{}"
+      ]
+    },
+    "aider-mcp-server": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@disler/aider-mcp-server",
+        "--config",
+        "{\"geminiApiKey\":\"AIzaSyBHg7My9Gz7H9Z8daBDyziw957Qv21qJuc\"}",
+        "--key",
+        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+      ]
+    },
+    "github": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@smithery-ai/github",
+        "--config",
+        "{\"githubPersonalAccessToken\":\"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\"}"
+      ]
+    },
+    "slack": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@smithery-ai/slack",
+        "--config",
+        "{\"slackToken\":\"xoxb-your-slack-token\"}"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@smithery-ai/server-sequential-thinking",
+        "--key",
+        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+      ]
+    },
+    "windows-control": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@cheffromspace/windows-remote-control"
+      ]
+    }
+  }
+}
