@@ -8,7 +8,7 @@
         "run",
         "@hyperbrowserai/mcp",
         "--config",
-        "{\"hbApiKey\":\"095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6\"}"
+        "{\"hbApiKey\":\"\"}"
       ]
     },
     "puppeteer": {
@@ -38,7 +38,7 @@
         "run",
         "@aindreyway/mcp-codex-keeper",
         "--key",
-        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+        ""
       ]
     },
     "starwind-ui": {
@@ -64,7 +64,7 @@
         "run",
         "@upstash/context7-mcp",
         "--key",
-        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+        ""
       ]
     },
     "e2b": {
@@ -77,7 +77,7 @@
         "run",
         "e2b",
         "--config",
-        "{\"apiKey\":\"e2b_ee96bde4bf944bfab019bbbbfaaf2baa342297b0\"}"
+        "{\"apiKey\":\"\"}"
       ]
     },
     "mcp-taskmanager": {
@@ -116,9 +116,9 @@
         "run",
         "@disler/aider-mcp-server",
         "--config",
-        "{\"geminiApiKey\":\"AIzaSyBHg7My9Gz7H9Z8daBDyziw957Qv21qJuc\"}",
+        "{\"geminiApiKey\":\"\"}",
         "--key",
-        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
+        ""
       ]
     },
     "github": {
@@ -131,7 +131,7 @@
         "run",
         "@smithery-ai/github",
         "--config",
-        "{\"githubPersonalAccessToken\":\"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\"}"
+        "{\"githubPersonalAccessToken\":\"\"}"
       ]
     },
     "slack": {
@@ -157,18 +157,7 @@
         "run",
         "@smithery-ai/server-sequential-thinking",
         "--key",
-        "095e3ddc-eb80-4e4f-9ddc-7b6608dc36f6"
-      ]
-    },
-    "windows-control": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@smithery/cli@latest",
-        "run",
-        "@cheffromspace/windows-remote-control"
+        ""
       ]
     }
   }
